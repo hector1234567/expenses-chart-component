@@ -1,0 +1,198 @@
+:root {
+    --color-soft-red: hsl(10, 79%, 65%);
+    --color-cyan: hsl(186, 34%, 60%);
+    --color-dark-brown: hsl(25, 47%, 15%);
+    --color-medium-brown: hsl(28, 10%, 53%);
+    --color-cream: hsl(27, 66%, 92%);
+    --color-very-pale-orange: hsl(33, 100%, 98%);
+}
+
+@font-face {
+    font-family: DMSans-Regular;
+    src: url(fonts/DMSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: DMSans-Bold;
+    src: url(fonts/DMSans-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    font-family: DMSans-Regular;
+    background-color: var(--color-cream);
+    color: var(--color-dark-brown);
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+header {
+    background-color: var(--color-soft-red);
+    color: var(--color-very-pale-orange);
+    width: 54rem;
+    height: 12.5rem;
+    margin-bottom: 2.4rem;
+    margin-top: 4rem;
+    padding: 3.4rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    background-color: var(--color-very-pale-orange);
+    width: 54rem;
+    height: 51.2rem;
+    padding: 3.4rem;
+    border-radius: 2rem;
+    margin-bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-100%);
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.my-balance__title {
+    font-size: 1.7rem;
+    margin-bottom: .8rem;
+    font-weight: 500;
+}
+
+.my-balance__total {
+    font-family: DMSans-Bold;
+    font-size: 3.1rem;
+}
+
+h1 {
+    font-family: DMSans-Bold;
+    font-weight: 700;
+    font-size: 3.25rem;
+}
+
+.separator {
+    background-color: var(--color-cream);
+    height: 2px;
+}
+
+.results {
+    display: flex;
+    justify-content: space-between;
+    height: 8.3rem;
+    margin-bottom: 1.6rem;
+}
+
+.total-month__title {
+    color: var(--color-medium-brown);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.total-month__total {
+    font-family: DMSans-Bold;
+    font-size: 5.1rem;
+}
+
+.inc-month {
+    align-self: flex-end;
+}
+
+.inc-month__pct {
+    font-family: DMSans-Bold;
+    text-align: end;
+    color: var(--color-dark-brown);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.inc-month__text {
+    color: var(--color-medium-brown);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.chart {
+    height: 21.4rem;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    cursor: pointer;
+}
+
+.day__label {
+    background-color: var(--color-dark-brown);
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--color-cream);
+    padding: .7rem;
+    margin-bottom: .8rem;
+    border-radius: .5rem;
+
+    opacity: 0;
+    transition: all .3s;
+}
+
+.day:hover .day__label {
+    opacity: 1;
+}
+
+.day__bar {
+    background-color: var(--color-soft-red);
+    width: 5.1rem;
+    border-radius: .5rem;
+    
+    transition: all .3s;
+}
+
+.today .day__bar {
+    background-color: var(--color-cyan);
+}
+
+.day:hover .day__bar {
+    opacity: .7;
+}
+
+.day__name {
+    color: var(--color-medium-brown);
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: .6rem;
+}
