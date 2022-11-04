@@ -31,15 +31,14 @@ const data = JSON.parse(JSON.stringify([
 
 const chart = document.querySelector('.chart');
 
-const today = new Date().getDay() - 1;
 const maxAmount = data.reduce((acc, elem) => elem.amount > acc ? elem.amount : acc, 0);
 
-data.forEach((elem, index) => {
-    const height = elem.amount * 165 / maxAmount;
+data.forEach((elem) => {
+    const height = elem.amount * 16.5 / maxAmount;
     chart.insertAdjacentHTML('beforeend', `
-    <div class="day${index === today ? ' today' : ''}">
+    <div class="day${elem.amount === maxAmount ? ' max' : ''}">
       <div class="day__label">$${elem.amount}</div>
-      <div class="day__bar" style="height: ${height}px;"></div>
+      <div class="day__bar" style="height: ${height}rem;"></div>
       <div class="day__name">${elem.day}</div>
     </div>
     `)

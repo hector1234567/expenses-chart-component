@@ -94,6 +94,10 @@ main {
     font-size: 3.1rem;
 }
 
+.header-logo img{
+    height: 5rem;
+}
+
 h1 {
     font-family: DMSans-Bold;
     font-weight: 700;
@@ -182,7 +186,7 @@ h1 {
     transition: all .3s;
 }
 
-.today .day__bar {
+.max .day__bar {
     background-color: var(--color-cyan);
 }
 
@@ -195,4 +199,34 @@ h1 {
     font-size: 1.7rem;
     font-weight: 500;
     margin-top: .6rem;
+}
+
+@media (max-width: 540px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 475px) {
+    html {
+        font-size: 47%;
+    }
+}
+
+@media (max-width: 407px) {
+    html {
+        font-size: 39%;
+    }
+}
+
+@media (max-width: 337px) {
+    html {
+        font-size: 32%;
+    }
+}
+
+@media (max-width: 276px) {
+    html {
+        font-size: 26%;
+    }
 }
